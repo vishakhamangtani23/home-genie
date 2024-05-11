@@ -1,18 +1,32 @@
-<form [formGroup]="appointmentForm" (ngSubmit)="proceedToPay()">
-    <div class="form-group">
-      <label for="location">Location:</label>
-      <input type="text" class="form-control" id="location" formControlName="location">
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">Book Appointment</h4>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="appointmentForm" (ngSubmit)="proceedToPay()">
+            <div class="form-group">
+              <label for="location">Location:</label>
+              <input type="text" class="form-control" id="location" formControlName="location" placeholder="Enter location">
+            </div>
+            <div class="form-group">
+              <label for="date">Date:</label>
+              <input type="date" class="form-control" id="date" formControlName="date">
+            </div>
+            <div class="form-group">
+              <label for="time">Time:</label>
+              <select class="form-control" id="time" formControlName="time">
+                <option *ngFor="let slot of timeSlots" [value]="slot">{{ slot }}</option>
+              </select>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="text-center btn btn-primary btn-block my-2">Proceed to Pay</button>
+            </div>
+            </form>
+        </div>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="date">Date:</label>
-      <input type="date" class="form-control" id="date" formControlName="date">
-    </div>
-    <div class="form-group">
-      <label for="time">Time:</label>
-      <select class="form-control" id="time" formControlName="time">
-        <option *ngFor="let slot of timeSlots" [value]="slot">{{ slot }}</option>
-      </select>
-    </div>
-    <button type="submit" (ngSubmit)="proceedToPay()" class="btn btn-primary" >Proceed to Pay</button>
-  </form>
-  
+  </div>
+</div>

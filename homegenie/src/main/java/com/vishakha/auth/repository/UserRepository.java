@@ -41,4 +41,10 @@ public class UserRepository {
     public Map<String,Object> fetchUser(Integer userId) {
         return jdbcTemplate.queryForMap("EXEC dbo.fetch_user ?", userId);
     }
+    public List<Map<String,Object>> getEmails()
+    {
+        return jdbcTemplate.queryForList("EXEC sp_get_mails");
+    }
+
+
 }

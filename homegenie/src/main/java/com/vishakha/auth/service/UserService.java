@@ -1,6 +1,7 @@
 package com.vishakha.auth.service;
 
 import com.vishakha.auth.repository.UserRepository;
+import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
@@ -181,6 +182,50 @@ public class UserService {
         javaMailSender.send(mimeMessage);
 //        return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(Map.of("status","Unsuccessful"));
     }
+
+    @Scheduled(cron = "3 * * * * *") // Execute at 3:00 AM every Monday
+    public void sendWelcomeEmails() {
+        System.out.println("Current time is :: " + LocalDate.now());
+        List<Map<String,Object>> emails = userRepository.getEmails();
+        for(Map<String,Object> email : emails) {
+            String recipientEmail = (String) email.get("email");
+            sendWelcomeEmail(recipientEmail, "http://localhost:4200");
+        }
+    }
+
+    /**
+     * Sends a welcome email to the specified email address.
+     *
+     * @param email The recipient's email address.
+     * @param link The link to include in the email.
+     */
+    public void sendWelcomeEmail(String email, String link) {
+        MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+        MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, "UTF-8");
+        try {
+            mimeMessageHelper.setSubject("Welcome to Our Expense Tracker!");
+            mimeMessageHelper.setTo(email);
+
+            // HTML content for the email body
+            String htmlContent = "<html>" +
+                    "<body style=\"font-family: Arial, sans-serif;\">" +
+                    "<h2>Welcome to Our HomeGenie</h2>" +
+                    "<p>We're excited to have you on board.</p>" +
+                    "<p>To start managing your expenses and budgets, click the button below:</p>" +
+                    "<p><a href=\"" + link + "\" style=\"display: inline-block; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;\">Go to Expense Tracker</a></p>" +
+                    "<p>If you have any questions or need assistance, feel free to contact us.</p>" +
+                    "<p>Thank you!</p>" +
+                    "</body>" +
+                    "</html>";
+
+            mimeMessageHelper.setText(htmlContent, true); // Set the HTML content
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+        javaMailSender.send(mimeMessage);
+        System.out.println("Email sent to :: " + email);
+    }
+
 
 
 

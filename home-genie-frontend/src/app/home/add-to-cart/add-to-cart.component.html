@@ -7,22 +7,18 @@
 </div> -->
 
 <div>
-<<<<<<< HEAD
 <div class="container">
-    <h2>Shopping Cart</h2>
-    <div class="pro9duct-info">
+    <h2 class="text-center text-success">Your Shopping Cart</h2>
+    <div class="product-info text-center">
         <label for="product-title">Product Title:</label>
-        <span id="product-title">Your Product Title</span>
-=======
-  
-    <h2 class="text-center">Shopping Cart</h2>
+        <span  id="product-title">Your Product Title Goes Here..</span>
+
     <div *ngFor="let c of cart">
     <div class="container"  >
     <div class="product-info" >
       <label for="product-title">Product Title:</label>
       <span id="product-title">{{ c.category_name }}</span>
       <span id="product-title">{{ c.product_name }}</span>
->>>>>>> fcb2591325193e691248fbe89104e2cecf0b6378
     </div>
     <div class="product-info">
       <label for="price">Price:</label>
@@ -39,8 +35,7 @@
       />
     </div>
     <div>
-      <input class="mx-2" type="submit" value="Update Cart" />
-      <input type="submit" (click)="deleteItem(c)" value="Remove from Cart" />
+      <i class="fas fa-trash"> <button type="submit" (click)="deleteItem(c)" value="Remove from Cart"></button></i>
     </div>
   </div>
 </div>
