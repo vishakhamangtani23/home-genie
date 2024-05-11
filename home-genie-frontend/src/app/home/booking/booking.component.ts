@@ -12,15 +12,7 @@ export class BookingComponent {
   appointmentForm!: FormGroup;
   constructor(private homeService: HomeService , private router :Router) {}
   timeSlots : String [] = [ "1:00pm" , "2:00pm " , "3:00pm " ];
-  proceedToPay() {
-    if (this.appointmentForm.valid) {
-      const appointmentData = this.appointmentForm.value;
-      console.log('Appointment details:', appointmentData);
-      // Proceed with payment or other actions
-    } else {
-      console.error('Form is invalid');
-    }
-  }
+  
   createForm(): void {
     this.appointmentForm = new FormGroup({
       location: new FormControl(),
@@ -33,10 +25,25 @@ export class BookingComponent {
     this.createForm();
     this.getPayment();
   }
+  proceedToPay(): void {
+    if (this.appointmentForm.valid) {
+      const appointmentData = this.appointmentForm.value;
+      console.log('Appointment details:', appointmentData);
+      // Handle payment
+      if (this.pd) {
+        window.location.href = this.pd; // Redirect to payment link URL
+      } else {
+        console.error('Payment link not available');
+      }
+    } else {
+      console.error('Form is invalid');
+    }
+  }
+
   getPayment(): void {
     this.homeService.getPayment().subscribe((res) => {
       console.log(res);
-      this.pd = "../"+res.paymentLinkUrl;
+      this.pd = res.paymentLinkUrl;
     });
   }
  
