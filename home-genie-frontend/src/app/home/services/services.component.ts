@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HomeService } from '../home.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-services',
@@ -7,7 +8,7 @@ import { HomeService } from '../home.service';
   styleUrls: ['./services.component.css']
 })
 export class ServicesComponent {
-  constructor(private homeService : HomeService) {}
+  constructor(private cookieService : CookieService, private homeService : HomeService) {}
   ngOnInit(): void {
     console.log('ServicesComponent');
     this.fetchServices()
@@ -19,6 +20,19 @@ export class ServicesComponent {
       console.log(response);
       this.services = response;
     })
+  }
+  addToCart(body:any){
+    body = {
+      userId : this.cookieService.get("userId"),
+      serviceId :body.id,
+      quantity:1
+    }
+    console.log(body)
+    this.homeService.addToCart(body).subscribe((res)=>{
+      console.log(res);
+      alert('Service added to cart')
+    })
+
   }
   
 

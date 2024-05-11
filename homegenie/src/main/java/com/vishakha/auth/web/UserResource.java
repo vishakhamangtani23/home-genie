@@ -46,5 +46,6 @@ public class UserResource {
         return userService.validateFPToken(body);
     }
 
+
 }
 

@@ -101,3 +101,21 @@ END
 GO
 
 
+/******************************
+* Store Procedure : medium.sp_fetch_all_blogs
+* Author      : Anjala
+* Date        :  10/23/2023
+* Description     : Script to fetch services
+* Test Code      : EXEC homeGenie.sp_fetch_services
+* Revision      : 
+******************************/
+CREATE OR ALTER   PROCEDURE [homeGenie].[sp_fetch_services]
+AS
+BEGIN
+	SELECT s.id,s.service_name,s.slug,r.rating
+	FROM homeGenie.services s
+	Inner Join homeGenie.review_ratings r
+	ON s.id=r.service_id
+END
+GO
+
