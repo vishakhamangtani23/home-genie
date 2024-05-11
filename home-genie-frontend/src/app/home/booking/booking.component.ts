@@ -46,5 +46,9 @@ export class BookingComponent {
       this.pd = res.paymentLinkUrl;
     });
   }
- 
+
+    handlePaymentSuccess(): void {
+      this.router.navigate(['/home']);
+    }
 }
+
