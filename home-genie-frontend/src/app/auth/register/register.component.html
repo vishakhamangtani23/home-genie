@@ -1,5 +1,5 @@
-<h2>User Registration Form</h2>
 <form [formGroup]="registerForm" (submit)="submit()">
+  <h2>User Registration</h2>
   <label for="username">Username:</label>
   <input
     type="text"
@@ -52,6 +52,7 @@
   <input type="text" id="mobile" formControlName="mobile" name="mobile" />
 
   <br />
-
-  <input type="submit" value="Register" />
-</form>
+  <div class="text-center">
+    <button style="background-color: #268496;" class="text-center btn btn-success" type="submit" value="Register">Register</button>
+  </div>
+  </form>

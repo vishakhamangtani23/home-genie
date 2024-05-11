@@ -1,21 +1,30 @@
 <div class="container mt-5">
-  <h2>Login</h2>
   <form [formGroup]="loginForm" (submit)="submit()">
+  <h2>Login</h2>
     <div class="form-group">
       <label for="username">Username:</label>
-      <input type="text" id="username" formControlName="username" required />
+      <input
+        type="text"
+        formControlName="username"
+        id="username"
+        required
+      />
     </div>
 
     <div class="form-group">
       <label for="password">Password:</label>
       <input
         type="password"
-        id="password"
         formControlName="password"
+        id="password"
+        name="password"
         required
       />
     </div>
     <a routerLink="/forgot-password">forgot password</a>
-    <button type="submit">Login</button>
+    <div class="text-center">
+      <button (click)="submit()" style="background-color: #268496;" class="text-center btn btn-success" type="submit">Login</button>
+    </div>
   </form>
 </div>
+

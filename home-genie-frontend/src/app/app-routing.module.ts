@@ -7,6 +7,8 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { SuccessComponent } from './shared/success/success.component';
+import { NotfoundComponent } from './shared/notfound/notfound.component';
 
 const routes: Routes = [
   {
@@ -21,8 +23,6 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
   },
-
-
   {
     path: 'app-navbar',
     component: NavbarComponent,
@@ -34,6 +34,14 @@ const routes: Routes = [
   {
     path: 'forgot-password',
     component: ForgotPasswordComponent,
+  },
+  {
+    path: 'success',
+    component: SuccessComponent,
+  },
+  {
+    path: 'notfound',
+    component: NotfoundComponent,
   },
 ];
 
