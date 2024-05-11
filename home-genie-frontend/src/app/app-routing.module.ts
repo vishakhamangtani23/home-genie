@@ -12,6 +12,7 @@ import { ChatHelpComponent } from './home/chat-help/chat-help.component';
 import { AddToCartComponent } from './home/add-to-cart/add-to-cart.component';
 import { CategoriesComponent } from './home/categories/categories.component';
 import { FetchUserComponent } from './auth/fetch-user/fetch-user.component';
+import { BookingComponent } from './home/booking/booking.component';
 // import { FetchUserComponent } from './auth/fetch-user/fetch-user.component';
 
 const routes: Routes = [
@@ -66,6 +67,9 @@ const routes: Routes = [
   {
     path:"fetch-user",
     component:FetchUserComponent
+  },{
+    path: "booking",
+    component:BookingComponent
   }
 
 ];

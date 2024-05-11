@@ -1,0 +1,18 @@
+<form [formGroup]="appointmentForm" (ngSubmit)="proceedToPay()">
+    <div class="form-group">
+      <label for="location">Location:</label>
+      <input type="text" class="form-control" id="location" formControlName="location">
+    </div>
+    <div class="form-group">
+      <label for="date">Date:</label>
+      <input type="date" class="form-control" id="date" formControlName="date">
+    </div>
+    <div class="form-group">
+      <label for="time">Time:</label>
+      <select class="form-control" id="time" formControlName="time">
+        <option *ngFor="let slot of timeSlots" [value]="slot">{{ slot }}</option>
+      </select>
+    </div>
+    <button type="submit" [routerLink]=[] class="btn btn-primary" >Proceed to Pay</button>
+  </form>
+  

@@ -10,6 +10,9 @@ import { RatingsComponent } from './ratings/ratings.component';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component'
 import { RouterModule } from '@angular/router';
 import { CategoriesComponent } from './categories/categories.component';
+import { BookingComponent } from './booking/booking.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PaymentComponent } from './payment/payment.component';
 
 
 @NgModule({
@@ -20,11 +23,14 @@ import { CategoriesComponent } from './categories/categories.component';
     ServicesComponent,
     RatingsComponent,
     AddToCartComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    BookingComponent,
+    PaymentComponent
   ],
   imports: [
     CommonModule,HttpClientModule ,
-    RouterModule
+    RouterModule,
+    FormsModule,ReactiveFormsModule
   ],
   exports: [
     HeroComponent,

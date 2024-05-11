@@ -37,4 +37,7 @@ export class HomeService {
   deleteItem(cartId:any):Observable<any>{
     return this.http.get(APP_CONSTANTS.BACKEND_URL + 'delete/'+cartId);
   }
+  getPayment():Observable<any>{
+    return this.http.get(APP_CONSTANTS.BACKEND_URL+"payments")
+  }
 }
