@@ -10,10 +10,11 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { RouterModule } from '@angular/router';
 import { FetchUserComponent } from './fetch-user/fetch-user.component';
+import { AddWorkComponent } from './add-work/add-work.component';
 
 @NgModule({
-  declarations: [RegisterComponent, LoginComponent, DashboardComponent, ResetPasswordComponent, ForgotPasswordComponent, FetchUserComponent],
+  declarations: [RegisterComponent, LoginComponent, DashboardComponent, ResetPasswordComponent, ForgotPasswordComponent, FetchUserComponent, AddWorkComponent],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule , RouterModule,AppRoutingModule],
-  exports: [RegisterComponent, LoginComponent,DashboardComponent, ResetPasswordComponent , ForgotPasswordComponent, FetchUserComponent],
+  exports: [RegisterComponent, LoginComponent,DashboardComponent, ResetPasswordComponent , ForgotPasswordComponent, FetchUserComponent, AddWorkComponent],
 })
 export class AuthModule {}
