@@ -11,7 +11,11 @@ import { ChatHelpComponent } from './home/chat-help/chat-help.component';
 
 const routes: Routes = [
   {
-    path: 'hero',
+    path:'',
+    component:RegisterComponent
+  },
+  {
+    path: 'home',
     component: HeroComponent
   },
  {
