@@ -4,14 +4,18 @@ import { HeroComponent } from './hero/hero.component';
 import { ChatHelpComponent } from './chat-help/chat-help.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { ProductsComponent } from './products/products.component'
+import { ProductsComponent } from './products/products.component';
+import { ServicesComponent } from './services/services.component';
+import { RatingsComponent } from './ratings/ratings.component'
 
 
 @NgModule({
   declarations: [
     HeroComponent,
     ChatHelpComponent,
-    ProductsComponent
+    ProductsComponent,
+    ServicesComponent,
+    RatingsComponent
   ],
   imports: [
     CommonModule,HttpClientModule 
@@ -19,7 +23,10 @@ import { ProductsComponent } from './products/products.component'
   exports: [
     HeroComponent,
     ChatHelpComponent,
-    ProductsComponent
+    ProductsComponent,
+    ServicesComponent,
+    RatingsComponent
+    
   ]
 })
 export class HomeModule { }
