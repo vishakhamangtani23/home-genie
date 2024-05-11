@@ -46,7 +46,7 @@ public class HomeResource {
         return homeService.fetchCart(userId);
     }
 
-    @PostMapping("/delete/{cartId}")
+    @GetMapping("/delete/{cartId}")
     public Map<String,Object> deleteItemFromCart(@PathVariable Integer cartId)
     {
         return homeService.deleteItemFromCart(cartId);
