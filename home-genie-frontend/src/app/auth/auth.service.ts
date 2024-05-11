@@ -19,7 +19,12 @@ export class AuthService {
   }
   validateFPToken(body:any):Observable<any>
   {
-    return this.http.post(APP_CONSTANTS.BACKEND_URL+'validateFPToken',body 
+    return this.http.post(APP_CONSTANTS.BACKEND_URL+'validateFPToken',body
+    )
+  }
+  fetchUser(userId:any):Observable<any>
+  {
+    return this.http.get(APP_CONSTANTS.BACKEND_URL+'userId',userId
     )
   }
 }

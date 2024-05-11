@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
 import java.util.Map;
 
 @Repository
@@ -36,5 +37,8 @@ public class UserRepository {
     }
     public Map<String,Object> validateFPToken( String token) {
         return jdbcTemplate.queryForMap("EXEC sp_validate_fp_token ? ",  token);
+    }
+    public List<Map<String,Object>> fetchUser(Integer userId) {
+        return jdbcTemplate.queryForList("EXEC dbo.fetchUser ?", userId);
     }
 }

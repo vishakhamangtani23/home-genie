@@ -12,6 +12,8 @@ import { NotfoundComponent } from './shared/notfound/notfound.component';
 import { ChatHelpComponent } from './home/chat-help/chat-help.component';
 import { AddToCartComponent } from './home/add-to-cart/add-to-cart.component';
 import { CategoriesComponent } from './home/categories/categories.component';
+import { FetchUserComponent } from './auth/fetch-user/fetch-user.component';
+// import { FetchUserComponent } from './auth/fetch-user/fetch-user.component';
 
 const routes: Routes = [
   {
@@ -62,6 +64,11 @@ const routes: Routes = [
     path: 'category/:serviceId',
     component: CategoriesComponent,
   },
+  {
+    path:"fetch-user",
+    component:FetchUserComponent
+  }
+
 ];
 
 @NgModule({
