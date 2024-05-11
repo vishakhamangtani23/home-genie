@@ -10,6 +10,7 @@ export class ServicesComponent {
   constructor(private homeService : HomeService) {}
   ngOnInit(): void {
     console.log('ServicesComponent');
+    this.fetchServices()
   }
   services : any;
   fetchServices()
