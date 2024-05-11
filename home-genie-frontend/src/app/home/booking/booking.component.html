@@ -13,6 +13,6 @@
         <option *ngFor="let slot of timeSlots" [value]="slot">{{ slot }}</option>
       </select>
     </div>
-    <button type="submit" [routerLink]="pd" class="btn btn-primary" >Proceed to Pay</button>
+    <button type="submit" (ngSubmit)="proceedToPay()" class="btn btn-primary" >Proceed to Pay</button>
   </form>
   

@@ -10,6 +10,7 @@ export class RatingsComponent implements OnInit{
   ratings:any
   constructor(private homeService:HomeService){}
   ngOnInit(): void {
+    this.getRatings()
     
   }
 
