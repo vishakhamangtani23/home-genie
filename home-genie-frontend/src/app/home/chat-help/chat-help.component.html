@@ -1,0 +1,30 @@
+<head>
+    <title>HandyFix - DIY and Professional Help</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-yellow-50">
+    <div class="container mx-auto px-4">
+        <h1 class="text-2xl font-semibold text-center mt-5 mb-3 text-purple-600">HandyFix Services</h1>
+        <p class="text-center mb-6 text-lg text-gray-700">Got a mini-project? Let's help you fix it!</p>
+        
+        <div class="max-w-md mx-auto bg-white p-8 border border-gray-200 rounded-lg">
+            <form id="serviceForm">
+                <div class="mb-4">
+                    <label for="serviceNeed" class="block text-gray-700 text-sm font-bold mb-2">What do you need help with?</label>
+                    <input type="text" id="serviceNeed" name="serviceNeed" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="e.g., I want to fix my tap">
+                </div>
+                
+                <button type="button" id="submitBtn" (click)="onSubmit()" class="bg-purple-600 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block w-full">Let's Fix It!</button>
+            </form>
+            <div id="output" class="mt-4 text-sm text-gray-800"></div>
+        </div>
+    </div>
+
+   
+</body>
