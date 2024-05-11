@@ -37,4 +37,8 @@ public class HomeRepository {
     public Map<String,Object> deleteItemFromCart(int cartId){
         return jdbcTemplate.queryForMap("EXEC homeGenie.delete_cart_item ?",cartId);
     }
+
+    public List<Map<String,Object>> fetchBookings(int userId) {
+        return jdbcTemplate.queryForList("EXEC homeGenie.fetch_bookings ?", userId);
+    }
 }

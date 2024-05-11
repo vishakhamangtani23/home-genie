@@ -1,1 +1,17 @@
-<p>ratings works!</p>
+<div class="small-container" >
+    <div class="row" *ngFor="let rating of ratings">
+        <div class="col-3">
+            <i class="fa fa-quote-left" ></i>
+            <p>rating.content</p>
+            <div class="rating">
+                <i class="fa fa-star" ></i>
+                <i class="fa fa-star" ></i>
+                <i class="fa fa-star" ></i>
+                <i class="fa fa-star" ></i>
+                <i class="fa fa-star-o" ></i>
+            </div>
+            <img src="../../../assets/images/user-1.png">
+            <h3>rating.username</h3>
+        </div>
+    </div>
+</div>

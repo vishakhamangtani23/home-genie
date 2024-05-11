@@ -95,6 +95,7 @@ import { CategoriesComponent } from './home/categories/categories.component';
 import { FetchUserComponent } from './auth/fetch-user/fetch-user.component';
 import { AddWorkComponent } from './auth/add-work/add-work.component';
 import { BookingComponent } from './home/booking/booking.component';
+import { BookingsListComponent } from './home/bookings-list/bookings-list.component';
 // import { FetchUserComponent } from './auth/fetch-user/fetch-user.component';
 
 const routes: Routes = [
@@ -162,6 +163,10 @@ const routes: Routes = [
     component: AddWorkComponent,
   },
   
+{
+    path:"booking-list",
+    component:BookingsListComponent
+  }
 
 ];
 
