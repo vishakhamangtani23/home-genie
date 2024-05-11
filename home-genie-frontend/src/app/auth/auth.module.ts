@@ -9,10 +9,11 @@ import { AppRoutingModule } from '../app-routing.module';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { RouterModule } from '@angular/router';
+import { FetchUserComponent } from './fetch-user/fetch-user.component';
 
 @NgModule({
-  declarations: [RegisterComponent, LoginComponent, DashboardComponent, ResetPasswordComponent, ForgotPasswordComponent],
+  declarations: [RegisterComponent, LoginComponent, DashboardComponent, ResetPasswordComponent, ForgotPasswordComponent, FetchUserComponent],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule , RouterModule,AppRoutingModule],
-  exports: [RegisterComponent, LoginComponent,DashboardComponent, ResetPasswordComponent , ForgotPasswordComponent],
+  exports: [RegisterComponent, LoginComponent,DashboardComponent, ResetPasswordComponent , ForgotPasswordComponent, FetchUserComponent],
 })
 export class AuthModule {}
