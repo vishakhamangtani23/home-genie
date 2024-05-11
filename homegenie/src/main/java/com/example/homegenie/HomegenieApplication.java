@@ -7,7 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HomegenieApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HomegenieApplication.class, args);
+
+		System.out.println("Hello World");
+
+	SpringApplication.run(HomegenieApplication.class, args);
 	}
 
 }
