@@ -3,6 +3,7 @@
                     <div class="col-4"  *ngFor = "let service of services"  [routerLink]="['/category/'+service.id]">
                     <img src="../../../assets/images/product-5.jpg">
                         <h4>{{service.service_name}}</h4>
+                        <h4>{{service.id}}</h4>
                         <div class="rating">
                             <!--(before this added awesome4 cdn font link to the head)added a cdn link by searching font awesome4 icon and from the site  search the star entering the first option and getting a link of this fa-star*-->
                             <i class="fa fa-star" ></i>
@@ -11,7 +12,7 @@
                             <i class="fa fa-star-half-o" ></i>
                             <i class="fa fa-star-o" ></i>
                             <p>
-                              <button (click)="addToCart(service)" cls="btn btn-outline-success">Add to Cart</button>
+                              <!-- <button  cls="btn btn-outline-success">Add to Cart</button> -->
                             </p>
                         </div>
                     </div>

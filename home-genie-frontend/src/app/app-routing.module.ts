@@ -1,7 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HeroComponent } from './home/hero/hero.component';
-import { DashboardComponent } from './auth/dashboard/dashboard.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
@@ -11,19 +10,21 @@ import { SuccessComponent } from './shared/success/success.component';
 import { NotfoundComponent } from './shared/notfound/notfound.component';
 import { ChatHelpComponent } from './home/chat-help/chat-help.component';
 import { AddToCartComponent } from './home/add-to-cart/add-to-cart.component';
+import { CategoriesComponent } from './home/categories/categories.component';
 import { FetchUserComponent } from './auth/fetch-user/fetch-user.component';
 import { BookingComponent } from './home/booking/booking.component';
+// import { FetchUserComponent } from './auth/fetch-user/fetch-user.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component:RegisterComponent
+    path: '',
+    component: RegisterComponent,
   },
   {
     path: 'home',
-    component: HeroComponent
+    component: HeroComponent,
   },
- {
+  {
     path: 'register',
     component: RegisterComponent,
   },
@@ -32,8 +33,8 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path:'chat',
-    component:ChatHelpComponent
+    path: 'chat',
+    component: ChatHelpComponent,
   },
   {
     path: 'app-navbar',
@@ -56,8 +57,12 @@ const routes: Routes = [
     component: NotfoundComponent,
   },
   {
-    path:"add-to-cart",
-    component:AddToCartComponent
+    path: 'add-to-cart',
+    component: AddToCartComponent,
+  },
+  {
+    path: 'category/:serviceId',
+    component: CategoriesComponent,
   },
   {
     path:"fetch-user",
@@ -71,6 +76,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
