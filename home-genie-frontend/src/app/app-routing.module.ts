@@ -11,17 +11,18 @@ import { SuccessComponent } from './shared/success/success.component';
 import { NotfoundComponent } from './shared/notfound/notfound.component';
 import { ChatHelpComponent } from './home/chat-help/chat-help.component';
 import { AddToCartComponent } from './home/add-to-cart/add-to-cart.component';
+import { CategoriesComponent } from './home/categories/categories.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component:RegisterComponent
+    path: '',
+    component: RegisterComponent,
   },
   {
     path: 'home',
-    component: HeroComponent
+    component: HeroComponent,
   },
- {
+  {
     path: 'register',
     component: RegisterComponent,
   },
@@ -30,8 +31,8 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path:'chat',
-    component:ChatHelpComponent
+    path: 'chat',
+    component: ChatHelpComponent,
   },
   {
     path: 'app-navbar',
@@ -54,14 +55,17 @@ const routes: Routes = [
     component: NotfoundComponent,
   },
   {
-    path:"add-to-cart",
-    component:AddToCartComponent
+    path: 'add-to-cart',
+    component: AddToCartComponent,
   },
-
+  {
+    path: 'category/:serviceId',
+    component: CategoriesComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

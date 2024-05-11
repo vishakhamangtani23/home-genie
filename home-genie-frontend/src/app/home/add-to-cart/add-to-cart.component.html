@@ -1,7 +1,9 @@
 <h2>Products</h2>
-<div class="border border-2 m-3 " *ngFor="let c of cart">
-  
-  <p>{{c.product_name}}</p>
-  <p>{{c.service_name}}</p>
-  <p>{{c.quantity}}</p>
+<div class="border border-2 m-3" *ngFor="let c of cart">
+  <p>{{ c.product_name }}</p>
+  <p>{{ c.category_name }}</p>
+  <p>{{ c.price }}</p>
+  <p>{{ c.product_price }}</p>
+  <p>{{ c.service_name }}</p>
+  <p>{{ c.quantity }}</p>
 </div>
