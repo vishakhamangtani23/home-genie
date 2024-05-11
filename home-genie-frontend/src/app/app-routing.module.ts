@@ -11,6 +11,7 @@ import { SuccessComponent } from './shared/success/success.component';
 import { NotfoundComponent } from './shared/notfound/notfound.component';
 import { ChatHelpComponent } from './home/chat-help/chat-help.component';
 import { AddToCartComponent } from './home/add-to-cart/add-to-cart.component';
+import { FetchUserComponent } from './auth/fetch-user/fetch-user.component';
 
 const routes: Routes = [
   {
@@ -57,6 +58,10 @@ const routes: Routes = [
     path:"add-to-cart",
     component:AddToCartComponent
   },
+  {
+    path:"fetch-user",
+    component:FetchUserComponent
+  }
 
 ];
 

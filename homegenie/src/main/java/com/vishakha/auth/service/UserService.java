@@ -150,6 +150,10 @@ public class UserService {
         }
         return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(Map.of("status","Unsuccessful"));
     }
+    public List<Map<String,Object>> fetchUser(Integer userId)
+    {
+        return userRepository.fetchUser(userId);
+    }
 
 
 

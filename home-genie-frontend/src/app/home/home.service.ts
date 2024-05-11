@@ -27,4 +27,8 @@ export class HomeService {
       APP_CONSTANTS.BACKEND_URL + 'cart/' + this.cookieService.get('userId')
     );
   }
+  getCategories(serviceId:any):Observable<any>
+  {
+    return this.http.get(APP_CONSTANTS.BACKEND_URL + 'categories/'+serviceId);
+  }
 }
