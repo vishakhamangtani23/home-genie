@@ -31,7 +31,10 @@ export class BookingComponent {
       console.log('Appointment details:', appointmentData);
       // Handle payment
       if (this.pd) {
-        window.location.href = this.pd; // Redirect to payment link URL
+        window.location.href = this.pd;
+        if(true){
+          this.router.navigate(['/home']);
+        } // Redirect to payment link URL
       } else {
         console.error('Payment link not available');
       }
