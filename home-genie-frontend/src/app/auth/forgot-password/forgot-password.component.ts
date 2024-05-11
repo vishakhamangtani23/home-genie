@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormGroupName } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-forgot-password',
@@ -8,13 +9,15 @@ import { FormControl, FormGroup, FormGroupName } from '@angular/forms';
 })
 export class ForgotPasswordComponent {
   emailGroupForm!: FormGroup;
-  email!: FormControl;
+  constructor(private authService: AuthService) {}
   ngOnInit(): void {
     this.emailGroupForm = new FormGroup({
-      email: new FormControl(),
+      email: new FormControl(""),
     });
   }
   submit() {
-    console.log(this.email.value);
+    this.authService.sendMail(this.emailGroupForm.value).subscribe((res)=>{
+      console.log(res);
+    })
   }
 }

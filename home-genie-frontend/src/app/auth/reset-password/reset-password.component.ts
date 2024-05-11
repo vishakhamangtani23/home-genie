@@ -21,5 +21,6 @@ export class ResetPasswordComponent {
   }
   ngOnInit() {
     console.log(this.token);
+    
   }
 }

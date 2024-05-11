@@ -14,4 +14,12 @@ export class AuthService {
   loginUser(body: any): Observable<any> {
     return this.http.post(APP_CONSTANTS.BACKEND_URL + 'login', body);
   }
+  sendMail(body:any):Observable<any>{
+    return this.http.post(APP_CONSTANTS.BACKEND_URL+'sendMail',body);
+  }
+  validateFPToken(body:any):Observable<any>
+  {
+    return this.http.post(APP_CONSTANTS.BACKEND_URL+'validateFPToken',body 
+    )
+  }
 }

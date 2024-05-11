@@ -30,13 +30,16 @@ export class RegisterComponent implements OnInit {
     console.log(this.registerForm.value);
     this.authService.registerUser(this.registerForm.value).subscribe((res) => {
       console.log(res);
-      res ? (registeredOrNot = true) : (registeredOrNot = false);
-    });
-    if (registeredOrNot == true) {
       this.router.navigate(['/login']);
+    },
+    (err)=>{
+      alert(
+        'Oops! Something went wrong. Please try again. Maybe u r already registered try logging in '
+      );
     }
-    alert(
-      'Oops! Something went wrong. Please try again. Maybe u r already registered try logging in '
-    );
+  )
+    ;
+   
+    
   }
 }
