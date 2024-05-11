@@ -25,5 +25,7 @@ export class BookingsListComponent implements OnInit{
     this.bookings=bookings
   })
   }
+
+  
   
 }
