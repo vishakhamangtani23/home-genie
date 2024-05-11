@@ -56,7 +56,9 @@ export class BookingComponent {
     });
   }
 
-  handlePaymentSuccess(): void {
-    this.router.navigate(['/home']);
+  insertBookings():void{
+    this.homeService.addBooking(this.appointmentForm.value).subscribe((res)=>{
+      console.log(res);
+    })
   }
 }
