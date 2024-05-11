@@ -9,6 +9,7 @@ import { ServicesComponent } from './services/services.component';
 import { RatingsComponent } from './ratings/ratings.component';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component'
 import { RouterModule } from '@angular/router';
+import { CategoriesComponent } from './categories/categories.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { RouterModule } from '@angular/router';
     ProductsComponent,
     ServicesComponent,
     RatingsComponent,
-    AddToCartComponent
+    AddToCartComponent,
+    CategoriesComponent
   ],
   imports: [
     CommonModule,HttpClientModule ,

@@ -530,7 +530,8 @@
     height: 3px;
     margin-top: 8px;
     transform: translateX(100px);
-    transition: transform 1s;
+    transition: transform 1s;l
+
   }
 
   .h20 {
