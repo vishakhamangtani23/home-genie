@@ -22,4 +22,8 @@ public class HomeRepository {
     public List<Map<String, Object>> fetchAllReviews() {
         return jdbcTemplate.queryForList("EXEC homeGenie.sp_fetch_review");
     }
+
+    public List<Map<String, Object>> fetchAllCategories(int serviceId) {
+        return jdbcTemplate.queryForList("EXEC homeGenie.sp_fetch_categories ?",serviceId);
+    }
 }

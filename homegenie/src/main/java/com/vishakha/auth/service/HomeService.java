@@ -21,4 +21,8 @@ public class HomeService {
     public List<Map<String, Object>> fetchAllReviews(){
         return homeRepository.fetchAllReviews();
     }
+
+    public List<Map<String, Object>> fetchAllCategories(int serviceId){
+        return homeRepository.fetchAllCategories(serviceId);
+    }
 }
