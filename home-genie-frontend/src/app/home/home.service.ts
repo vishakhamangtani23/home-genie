@@ -33,4 +33,8 @@ export class HomeService {
     console.log(serviceId)
     return this.http.get(APP_CONSTANTS.BACKEND_URL + 'categories/'+serviceId);
   }
+
+  deleteItem(cartId:any):Observable<any>{
+    return this.http.get(APP_CONSTANTS.BACKEND_URL + 'delete/'+cartId);
+  }
 }

@@ -33,4 +33,11 @@ export class AddToCartComponent {
     });
     console.log(this.total + 'Total');
   }
+
+  deleteItem(c:any){
+    this.homeService.deleteItem(c.id).subscribe((response:any)=>{
+      console.log("deleted")
+      console.log(response)
+    })
+  }
 }
