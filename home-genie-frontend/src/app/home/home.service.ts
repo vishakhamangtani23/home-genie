@@ -36,4 +36,7 @@ export class HomeService {
   getPayment():Observable<any>{
     return this.http.get(APP_CONSTANTS.BACKEND_URL+"payments")
   }
+  getBookings(userId:number):Observable<any>{
+    return this.http.get(APP_CONSTANTS.BACKEND_URL+"bookings/"+userId)
+  }
 }

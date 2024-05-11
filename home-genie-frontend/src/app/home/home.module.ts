@@ -13,6 +13,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { BookingComponent } from './booking/booking.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaymentComponent } from './payment/payment.component';
+import { BookingsListComponent } from './bookings-list/bookings-list.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { PaymentComponent } from './payment/payment.component';
     AddToCartComponent,
     CategoriesComponent,
     BookingComponent,
-    PaymentComponent
+    PaymentComponent,
+    BookingsListComponent
   ],
   imports: [
     CommonModule,HttpClientModule ,
