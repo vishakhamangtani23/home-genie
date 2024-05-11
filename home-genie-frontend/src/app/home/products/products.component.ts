@@ -8,11 +8,16 @@ import { HomeService } from '../home.service';
 })
 export class ProductsComponent {
   constructor(private homeService : HomeService){}
+  products : any;
   ngOnInit():void{
     this.fetchProducts()
   }
   fetchProducts()
   {
+    this.homeService.fetchAllProducts().subscribe((response)=>{
+      console.log(response);
+      this.products= response;
+    })
   }
 
 }
