@@ -1,0 +1,57 @@
+<h2>User Registration Form</h2>
+<form [formGroup]="registerForm" (submit)="submit()">
+  <label for="username">Username:</label>
+  <input
+    type="text"
+    formControlName="username"
+    id="username"
+    name="username"
+    required
+  />
+
+  <br />
+
+  <label for="password">Password:</label>
+  <input
+    type="password"
+    formControlName="password"
+    id="password"
+    name="password"
+    required
+  />
+
+  <br />
+
+  <label for="password">Confirm Password:</label>
+  <input
+    type="password"
+    id="confirmPassword"
+    formControlName="confirmPassword"
+    name="confirmPassword"
+    required
+  />
+
+  <br />
+  <label for="email">Email:</label>
+  <input
+    type="email"
+    id="email"
+    formControlName="email"
+    name="email"
+    required
+  />
+
+  <br />
+
+  <label for="fullname">Full Name:</label>
+  <input type="text" id="fullname" formControlName="fullname" name="fullName" />
+
+  <br />
+
+  <label for="mobile">Mobile:</label>
+  <input type="text" id="mobile" formControlName="mobile" name="mobile" />
+
+  <br />
+
+  <input type="submit" value="Register" />
+</form>
