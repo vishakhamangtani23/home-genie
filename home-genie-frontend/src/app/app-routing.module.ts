@@ -166,6 +166,10 @@ const routes: Routes = [
 {
     path:"booking-list",
     component:BookingsListComponent
+  },
+  {
+    path :"payment ",
+    component : HeroComponent
   }
 
 ];

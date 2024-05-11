@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormControlName, FormGroup } from '@angular/forms';
 import { HomeService } from '../home.service';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-booking',
@@ -10,14 +11,19 @@ import { Router } from '@angular/router';
 })
 export class BookingComponent {
   appointmentForm!: FormGroup;
-  constructor(private homeService: HomeService , private router :Router) {}
-  timeSlots : String [] = [ "1:00pm" , "2:00pm " , "3:00pm " ];
-  
+  constructor(
+    private homeService: HomeService,
+    private router: Router,
+    private cookieService: CookieService
+  ) {}
+  timeSlots: String[] = ['1:00pm', '2:00pm ', '3:00pm '];
+  userId = this.cookieService.get('userId');
   createForm(): void {
     this.appointmentForm = new FormGroup({
       location: new FormControl(),
       date: new FormControl(),
       time: new FormControl(),
+      userId: new FormControl(),
     });
   }
   pd!: any;
@@ -39,7 +45,7 @@ export class BookingComponent {
         console.error('Payment link not available');
       }
     } else {
-      console.error('Form is invalid');
+      console.error('Payment link not available');
     }
   }
 
@@ -50,8 +56,7 @@ export class BookingComponent {
     });
   }
 
-    handlePaymentSuccess(): void {
-      this.router.navigate(['/home']);
-    }
+  handlePaymentSuccess(): void {
+    this.router.navigate(['/home']);
+  }
 }
-

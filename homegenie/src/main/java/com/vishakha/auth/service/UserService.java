@@ -193,12 +193,6 @@ public class UserService {
         }
     }
 
-    /**
-     * Sends a welcome email to the specified email address.
-     *
-     * @param email The recipient's email address.
-     * @param link The link to include in the email.
-     */
     public void sendWelcomeEmail(String email, String link) {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, "UTF-8");
