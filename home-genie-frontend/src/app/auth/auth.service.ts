@@ -14,17 +14,16 @@ export class AuthService {
   loginUser(body: any): Observable<any> {
     return this.http.post(APP_CONSTANTS.BACKEND_URL + 'login', body);
   }
-  sendMail(body:any):Observable<any>{
-    return this.http.post(APP_CONSTANTS.BACKEND_URL+'sendMail',body);
+  sendMail(body: any): Observable<any> {
+    return this.http.post(APP_CONSTANTS.BACKEND_URL + 'sendMail', body);
   }
-  validateFPToken(body:any):Observable<any>
-  {
-    return this.http.post(APP_CONSTANTS.BACKEND_URL+'validateFPToken',body
-    )
+  validateFPToken(body: any): Observable<any> {
+    return this.http.post(APP_CONSTANTS.BACKEND_URL + 'validateFPToken', body);
   }
-  fetchUser(userId:any):Observable<any>
-  {
-    return this.http.get(APP_CONSTANTS.BACKEND_URL+'userId',userId
-    )
+  fetchUser(userId: any): Observable<any> {
+    return this.http.get(APP_CONSTANTS.BACKEND_URL + 'user/' + userId);
+  }
+  addWork(body: any): Observable<any> {
+    return this.http.post(APP_CONSTANTS.BACKEND_URL + 'addWork', body);
   }
 }

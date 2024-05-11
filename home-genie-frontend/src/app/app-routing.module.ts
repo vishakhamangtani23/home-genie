@@ -156,7 +156,12 @@ const routes: Routes = [
   },{
     path: "booking",
     component:BookingComponent
-  }
+  },
+  {
+    path: 'add-work',
+    component: AddWorkComponent,
+  },
+  
 
 ];
 
