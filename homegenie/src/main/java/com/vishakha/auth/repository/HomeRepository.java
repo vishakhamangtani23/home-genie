@@ -24,6 +24,10 @@ public class HomeRepository {
     public List<Map<String, Object>> fetchAllReviews() {
         return jdbcTemplate.queryForList("EXEC homeGenie.sp_fetch_review");
     }
+
+    public List<Map<String, Object>> fetchAllCategories(int serviceId) {
+        return jdbcTemplate.queryForList("EXEC homeGenie.sp_fetch_categories ?",serviceId);
+    }
     public int addToCart(Integer userId, Integer productId, Integer serviceId, Integer quantity) {
         return jdbcTemplate.update("EXEC homeGenie.addToCart ?,?,?,?", userId,serviceId,productId, quantity);
     }

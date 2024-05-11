@@ -30,6 +30,11 @@ public class HomeResource {
     public List<Map<String,Object>> fetchAllReviews(){
         return homeService.fetchAllReviews();
     }
+
+    @GetMapping("/categories/{serviceId}")
+    public List<Map<String,Object>> fetchAllCategories(@PathVariable int serviceId){
+        return homeService.fetchAllCategories(serviceId);
+    }
     @PostMapping("/add-to-cart")
     public ResponseEntity<Map<String,Object>> addToCart(@RequestBody Map<String,Object> body)
     {

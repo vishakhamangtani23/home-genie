@@ -296,6 +296,22 @@ ul {
     display: block;
     cursor: pointer;
   }
+  
+  #Indicator{
+    width: 100px;
+    border: none;
+    background: #ff523b;
+    height: 3px;
+    margin-top: 8px;
+    transform: translateX(100px);
+    transition: transform 1s;
+  
+  }
+  
+  .h20 {
+    height:400px;
+    width:400px;
+  }
 }
 
 /*-----------------------media query for less than 600 screen size(mobile device) -----------------------*/
