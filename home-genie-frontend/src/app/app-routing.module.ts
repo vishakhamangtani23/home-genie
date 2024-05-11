@@ -1,7 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HeroComponent } from './home/hero/hero.component';
-import { DashboardComponent } from './auth/dashboard/dashboard.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
