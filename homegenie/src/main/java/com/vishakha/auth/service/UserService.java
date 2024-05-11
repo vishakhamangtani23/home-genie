@@ -192,7 +192,7 @@ public class UserService {
             sendWelcomeEmail(recipientEmail, "http://localhost:4200");
         }
     }
-    
+
     public void sendWelcomeEmail(String email, String link) {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, "UTF-8");
