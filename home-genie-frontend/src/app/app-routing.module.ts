@@ -81,7 +81,7 @@ const routes: Routes = [
     path: "booking",
     component:BookingComponent
 >>>>>>> fcb2591325193e691248fbe89104e2cecf0b6378
-  }
+  },
 
 ];
 
