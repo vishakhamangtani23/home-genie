@@ -62,4 +62,9 @@ public class HomeService {
     {
         return homeRepository.fetchCart(userId);
     }
+
+    public Map<String,Object> deleteItemFromCart(Integer cartId)
+    {
+        return homeRepository.deleteItemFromCart(cartId);
+    }
 }
