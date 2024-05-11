@@ -21,19 +21,7 @@ export class ServicesComponent {
       this.services = response;
     })
   }
-  addToCart(body:any){
-    body = {
-      userId : this.cookieService.get("userId"),
-      serviceId :body.id,
-      quantity:1
-    }
-    console.log(body)
-    this.homeService.addToCart(body).subscribe((res)=>{
-      console.log(res);
-      alert('Service added to cart')
-    })
-
-  }
+  
   
 
 }

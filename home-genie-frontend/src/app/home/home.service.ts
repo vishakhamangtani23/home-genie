@@ -8,6 +8,7 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root',
 })
 export class HomeService {
+  serviceId:any;
   constructor(private http: HttpClient, private cookieService: CookieService) {}
   fetchAllServices(): Observable<any> {
     return this.http.get(APP_CONSTANTS.BACKEND_URL + 'services');
@@ -29,6 +30,7 @@ export class HomeService {
   }
   getCategories(serviceId:any):Observable<any>
   {
+    console.log(serviceId)
     return this.http.get(APP_CONSTANTS.BACKEND_URL + 'categories/'+serviceId);
   }
 }
