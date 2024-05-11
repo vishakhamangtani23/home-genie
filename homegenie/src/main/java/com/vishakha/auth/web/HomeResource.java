@@ -52,4 +52,10 @@ public class HomeResource {
         return homeService.deleteItemFromCart(cartId);
     }
 
+    @GetMapping("/bookings/{userId}")
+    public List<Map<String,Object>> fetchBookings(@PathVariable Integer userId)
+    {
+        return homeService.fetchBookings(userId);
+    }
+
 }
