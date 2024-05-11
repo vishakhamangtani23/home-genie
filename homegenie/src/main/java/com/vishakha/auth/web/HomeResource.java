@@ -2,10 +2,8 @@ package com.vishakha.auth.web;
 
 import com.vishakha.auth.service.HomeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -31,5 +29,15 @@ public class HomeResource {
     @GetMapping("/reviews")
     public List<Map<String,Object>> fetchAllReviews(){
         return homeService.fetchAllReviews();
+    }
+    @PostMapping("/add-to-cart")
+    public ResponseEntity<Map<String,Object>> addToCart(@RequestBody Map<String,Object> body)
+    {
+        return homeService.addToCart(body);
+    }
+    @GetMapping("/cart/{userId}")
+    public List<Map<String,Object>> fetchCart(@PathVariable Integer userId)
+    {
+        return homeService.fetchCart(userId);
     }
 }

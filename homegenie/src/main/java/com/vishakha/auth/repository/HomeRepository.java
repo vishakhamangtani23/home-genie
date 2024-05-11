@@ -1,6 +1,8 @@
 package com.vishakha.auth.repository;
 
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -21,5 +23,11 @@ public class HomeRepository {
     }
     public List<Map<String, Object>> fetchAllReviews() {
         return jdbcTemplate.queryForList("EXEC homeGenie.sp_fetch_review");
+    }
+    public int addToCart(Integer userId, Integer productId, Integer serviceId, Integer quantity) {
+        return jdbcTemplate.update("EXEC homeGenie.addToCart ?,?,?,?", userId,serviceId,productId, quantity);
+    }
+    public List<Map<String,Object>> fetchCart(Integer userId) {
+        return jdbcTemplate.queryForList("EXEC homeGenie.fetchCart ?", userId);
     }
 }

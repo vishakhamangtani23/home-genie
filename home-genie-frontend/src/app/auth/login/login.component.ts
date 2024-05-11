@@ -17,7 +17,7 @@ export class LoginComponent {
     private authService: AuthService,
     private router: Router,
     private cookieService: CookieService,
-    private auth : AuthGuardServiceService,
+    private auth: AuthGuardServiceService,
     private activatedRoute: ActivatedRoute
   ) {}
   ngOnInit(): void {
@@ -27,7 +27,6 @@ export class LoginComponent {
         console.log(val[0].path);
         this.auth.isLoginPage = val[0].path;
       })
-      
     );
   }
 
@@ -44,7 +43,7 @@ export class LoginComponent {
       console.log(res);
       if (res.validYN === 1) {
         this.cookieService.set('username', res.username);
-        this.cookieService.set('userid', res.userid);
+        this.cookieService.set('userId', res.userid);
         this.cookieService.set('token', res.token);
         this.cookieService.set('isLoggedIn', '1');
         this.cookieService.set('userRole', res.user_role);

@@ -10,6 +10,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { SuccessComponent } from './shared/success/success.component';
 import { NotfoundComponent } from './shared/notfound/notfound.component';
 import { ChatHelpComponent } from './home/chat-help/chat-help.component';
+import { AddToCartComponent } from './home/add-to-cart/add-to-cart.component';
 
 const routes: Routes = [
   {
@@ -52,6 +53,11 @@ const routes: Routes = [
     path: 'notfound',
     component: NotfoundComponent,
   },
+  {
+    path:"add-to-cart",
+    component:AddToCartComponent
+  },
+
 ];
 
 @NgModule({

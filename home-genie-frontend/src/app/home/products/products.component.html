@@ -11,7 +11,9 @@
             <i class="fa fa-star-half-o" ></i>
             <i class="fa fa-star-o" ></i>
         </div>
-        <p>Rs. {{product.product_price}}</p>
+        <p>Rs. {{product.product_price}}</p> <p>
+            <button (click)="addToCart(product)"cls="btn btn-outline-success">Add to Cart</button>
+          </p>
     </div>
     <!-- <div class="col-4">
         <a href="products-details.html"><img src="../../../assets/images/product-2.jpg"></a>
