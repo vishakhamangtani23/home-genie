@@ -31,4 +31,7 @@ export class HomeService {
   {
     return this.http.get(APP_CONSTANTS.BACKEND_URL + 'categories/'+serviceId);
   }
+  getPayment():Observable<any>{
+    return this.http.get(APP_CONSTANTS.BACKEND_URL+"payments")
+  }
 }
