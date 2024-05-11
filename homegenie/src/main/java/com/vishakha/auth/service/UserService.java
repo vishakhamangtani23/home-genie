@@ -150,9 +150,36 @@ public class UserService {
         }
         return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(Map.of("status","Unsuccessful"));
     }
-    public List<Map<String,Object>> fetchUser(Integer userId)
+    public Map<String,Object> fetchUser(Integer userId)
     {
         return userRepository.fetchUser(userId);
+    }
+    public void addWork(Map<String,Object> body)
+    {
+     String email = (String) body.get("email");
+     String username = (String) body.get("username");
+
+        MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+        MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage);
+        try
+        {
+            String subject = "Regarding Your Job Application";
+            String emailContent = "<p>Dear "+username+"</p>" +
+                    "<p>We hope this email finds you well.</p>" +
+                    "<p>Thank you for applying for the [Position Name] position at [Company Name]. We appreciate your interest in joining our team.</p>" +
+                    "<p>We are currently reviewing all applications, and we will contact you if your qualifications match our requirements. In the meantime, please feel free to reach out if you have any questions or require further information.</p>";
+
+            mimeMessageHelper.setSubject(subject);
+            mimeMessageHelper.setTo(email);
+            mimeMessageHelper.setText(emailContent, true); // Set the email content as HTML
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        javaMailSender.send(mimeMessage);
+//        return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(Map.of("status","Unsuccessful"));
     }
 
 

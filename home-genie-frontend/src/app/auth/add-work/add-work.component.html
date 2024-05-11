@@ -1,4 +1,4 @@
-<form>
+<form [formGroup]="addWorkForm">
   <h2>Add Work User</h2>
   <label for="username">Username:</label>
   <input
@@ -33,23 +33,11 @@
 
   <br />
   <label for="email">Age:</label>
-  <input
-    type="age"
-    id="age"
-    formControlName="age"
-    name="age"
-    required
-  />
+  <input type="age" id="age" formControlName="age" name="age" required />
 
   <br />
   <label for="email">DOB:</label>
-  <input
-    type="dob"
-    id="dob"
-    formControlName="dob"
-    name="dob"
-    required
-  />
+  <input type="dob" id="dob" formControlName="dob" name="dob" required />
   <label for="email">Year of Experience:</label>
   <input
     type="yearofexp"
@@ -61,6 +49,14 @@
 
   <br />
   <div class="text-center">
-    <button style="background-color: #268496;" class="text-center btn btn-success" type="submit" value="Register">Register Yourself</button>
+    <button
+      style="background-color: #268496"
+      class="text-center btn btn-success"
+      type="submit"
+      (click)="onSubmit()"
+      value="Register"
+    >
+      Register Yourself
+    </button>
   </div>
-  </form>
+</form>

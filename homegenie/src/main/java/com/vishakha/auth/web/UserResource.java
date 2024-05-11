@@ -46,11 +46,16 @@ public class UserResource {
         return userService.validateFPToken(body);
     }
     @GetMapping("/user/{userId}")
-    public List<Map<String,Object>> fetchUser(@PathVariable Integer userId)
+    public Map<String,Object> fetchUser(@PathVariable Integer userId)
     {
         return userService.fetchUser(userId);
     }
-
+    @PostMapping("/addWork")
+    public Map<String,Object> addWork(@RequestBody Map<String,Object> body)
+    {
+         userService.addWork(body);
+         return Map.of("status","successful");
+    }
 
 }
 

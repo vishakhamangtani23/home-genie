@@ -38,7 +38,7 @@ public class UserRepository {
     public Map<String,Object> validateFPToken( String token) {
         return jdbcTemplate.queryForMap("EXEC sp_validate_fp_token ? ",  token);
     }
-    public List<Map<String,Object>> fetchUser(Integer userId) {
-        return jdbcTemplate.queryForList("EXEC dbo.fetchUser ?", userId);
+    public Map<String,Object> fetchUser(Integer userId) {
+        return jdbcTemplate.queryForMap("EXEC dbo.fetch_user ?", userId);
     }
 }
