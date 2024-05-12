@@ -38,7 +38,6 @@ export class LoginComponent {
   }
 
   submit(): void {
-    console.log(this.loginForm.value);
     this.authService.loginUser(this.loginForm.value).subscribe((res: any) => {
       console.log(res);
       if (res.validYN === 1) {
@@ -46,9 +45,17 @@ export class LoginComponent {
         this.cookieService.set('userId', res.userid);
         this.cookieService.set('token', res.token);
         this.cookieService.set('isLoggedIn', '1');
-        this.cookieService.set('userRole', res.user_role);
+        this.cookieService.set('userRole', res.role_id);
         alert('Login Success');
-        this.router.navigate(['/home']);
+        if(res.role_id==4)
+          {
+            this.router.navigate(['/admin-dashboard']);
+          }
+          else
+          {
+            this.router.navigate(['/home']);
+          }
+       
       } else {
         alert('Login Failed');
       }

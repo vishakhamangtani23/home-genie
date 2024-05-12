@@ -72,4 +72,8 @@ public class HomeService {
     {
         return homeRepository.fetchBookings(userId);
     }
+    public List<Map<String,Object>> fetchAllBookings()
+    {
+        return homeRepository.fetchAllBookings();
+    }
 }

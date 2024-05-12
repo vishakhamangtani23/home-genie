@@ -58,4 +58,10 @@ public class HomeResource {
         return homeService.fetchBookings(userId);
     }
 
+    @GetMapping("/bookings")
+    public List<Map<String,Object>> fetchAllBookings()
+    {
+        return homeService.fetchAllBookings();
+    }
+
 }

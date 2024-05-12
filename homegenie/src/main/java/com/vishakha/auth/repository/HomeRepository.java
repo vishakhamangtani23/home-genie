@@ -41,4 +41,9 @@ public class HomeRepository {
     public List<Map<String,Object>> fetchBookings(int userId) {
         return jdbcTemplate.queryForList("EXEC homeGenie.fetch_bookings ?", userId);
     }
+    public List<Map<String,Object>> fetchAllBookings()
+    {
+        return jdbcTemplate.queryForList("EXEC homeGenie.fetch_all_bookings");
+    }
+
 }
