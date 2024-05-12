@@ -32,16 +32,18 @@ export class BookingComponent {
     this.getPayment();
   }
   proceedToPay(): void {
-    this.homeService.addBooking(this.appointmentForm).subscribe((res) => {
-      console.log(res);
-      this.router.navigate(['/success']);
-    });
-    // const appointmentData = this.appointmentForm.value;
-
-    console.log('Appointment details:', this.appointmentForm);
-    // Handle payment
-    if (this.pd) {
-      window.location.href = this.pd; // Redirect to payment link URL
+    if (this.appointmentForm.valid) {
+      const appointmentData = this.appointmentForm.value;
+      console.log('Appointment details:', appointmentData);
+      // Handle payment
+      if (this.pd) {
+        window.location.href = this.pd;
+        if(true){
+          this.router.navigate(['/home']);
+        } // Redirect to payment link URL
+      } else {
+        console.error('Payment link not available');
+      }
     } else {
       console.error('Payment link not available');
     }
@@ -54,7 +56,9 @@ export class BookingComponent {
     });
   }
 
-  handlePaymentSuccess(): void {
-    this.router.navigate(['/home']);
+  insertBookings():void{
+    this.homeService.addBooking(this.appointmentForm.value).subscribe((res)=>{
+      console.log(res);
+    })
   }
 }

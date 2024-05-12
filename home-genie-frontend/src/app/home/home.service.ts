@@ -44,6 +44,6 @@ export class HomeService {
     return this.http.get(APP_CONSTANTS.BACKEND_URL+"bookings/"+userId)
   }
   addBooking(body:any):Observable<any>{
-    return this.http.post(APP_CONSTANTS.BACKEND_URL+"bookings",body)
+    return this.http.post(APP_CONSTANTS.BACKEND_URL+"insertbookings",body)
   }
 }
