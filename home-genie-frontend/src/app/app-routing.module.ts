@@ -15,6 +15,7 @@ import { AddWorkComponent } from './auth/add-work/add-work.component';
 import { BookingComponent } from './home/booking/booking.component';
 import { BookingsListComponent } from './home/bookings-list/bookings-list.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { GoogleMapDemoComponent } from './home/google-map-demo/google-map-demo.component';
 // import { FetchUserComponent } from './auth/fetch-user/fetch-user.component';
 
 const routes: Routes = [
@@ -63,33 +64,38 @@ const routes: Routes = [
     component: CategoriesComponent,
   },
   {
-    path:"fetch-user",
-    component:FetchUserComponent
-  },
-  {
-    path:"add-work",
-    component:AddWorkComponent
-  },{
-    path: "booking",
-    component:BookingComponent
+    path: 'fetch-user',
+    component: FetchUserComponent,
   },
   {
     path: 'add-work',
     component: AddWorkComponent,
   },
-  
-{
-    path:"booking-list",
-    component:BookingsListComponent
+  {
+    path: 'booking',
+    component: BookingComponent,
   },
   {
-    path :"payment ",
-    component : HeroComponent
-  }, {
-    path:'admin-dashboard'
-    , component:AdminDashboardComponent
-  }
+    path: 'add-work',
+    component: AddWorkComponent,
+  },
 
+  {
+    path: 'booking-list',
+    component: BookingsListComponent,
+  },
+  {
+    path: 'payment ',
+    component: HeroComponent,
+  },
+  {
+    path: 'admin-dashboard',
+    component: AdminDashboardComponent,
+  },
+  {
+    path:'map',
+    component:GoogleMapDemoComponent
+  }
 ];
 
 @NgModule({

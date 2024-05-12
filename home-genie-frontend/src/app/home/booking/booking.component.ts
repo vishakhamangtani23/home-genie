@@ -4,12 +4,14 @@ import { HomeService } from '../home.service';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 
+import {GoogleMap} from '@angular/google-maps';
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
-  styleUrls: ['./booking.component.css'],
+  styleUrls: ['./booking.component.css'],  
 })
 export class BookingComponent {
+  
   appointmentForm!: FormGroup;
   constructor(
     private homeService: HomeService,

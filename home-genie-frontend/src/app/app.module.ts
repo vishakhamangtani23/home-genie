@@ -8,6 +8,7 @@ import { HomeModule } from './home/home.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared/shared.module';
 import { AdminModule } from './admin/admin.module';
+import { GoogleMapsModule } from '@angular/google-maps';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AdminModule } from './admin/admin.module';
     HomeModule,
     NgbModule,
     SharedModule,
-    AdminModule
+    AdminModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

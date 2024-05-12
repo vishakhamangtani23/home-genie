@@ -14,6 +14,8 @@ import { BookingComponent } from './booking/booking.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaymentComponent } from './payment/payment.component';
 import { BookingsListComponent } from './bookings-list/bookings-list.component';
+import { GoogleMapsModule } from '@angular/google-maps'
+import { GoogleMapDemoComponent } from './google-map-demo/google-map-demo.component';
 
 
 @NgModule({
@@ -26,18 +28,25 @@ import { BookingsListComponent } from './bookings-list/bookings-list.component';
     CategoriesComponent,
     BookingComponent,
     PaymentComponent,
-    BookingsListComponent
+    BookingsListComponent,
+    GoogleMapDemoComponent
   ],
+
   imports: [
     CommonModule,HttpClientModule ,
     RouterModule,
-    FormsModule,ReactiveFormsModule
+   
+    FormsModule,ReactiveFormsModule,GoogleMapsModule, 
+   
   ],
   exports: [
     HeroComponent,
     ProductsComponent,
     ServicesComponent,
-    RatingsComponent
+    RatingsComponent,
+    
+
+    
 
   ]
 })
