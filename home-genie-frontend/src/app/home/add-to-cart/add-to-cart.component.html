@@ -5,41 +5,37 @@
   <p>{{c.service_name}}</p>
   <p>{{c.quantity}}</p>
 </div> -->
-
 <div>
-<div class="container">
-    <h2 class="text-center text-success">Your Shopping Cart</h2>
-    <div class="product-info text-center">
-       
-
-    <div *ngFor="let c of cart">
-    <div class="container"  >
-    <div class="product-info" >
-      <label for="product-title">Product Title:</label>
-      <span id="product-title">{{ c.category_name }}</span>
-      <span id="product-title">{{ c.product_name }}</span>
-    </div>
-    <div class="product-info">
-      <label for="price">Price:</label>
-      <span id="price">{{ c.price }} {{ c.product_price }}</span>
-    </div>
-    <div class="product-info">
-      <label for="quantity">Quantity:</label>
-      <input
-        type="number"
-        id="quantity"
-        name="quantity"
-        min="1"
-        value="{{ c.quantity }}"
-      />
-    </div>
-    <div>
-      <i class="fas fa-3 fa-trash"> <button type="submit" (click)="deleteItem(c)" value="Remove from Cart"></button></i>
+<div class="container-fluid my-3">
+    <h2 class="text-center mb-4">All BOOKINGS</h2>
+    <div *ngFor="let c of cart" class="card note-card">
+        <div class="card-body">
+            <div>
+              <label for="price">Category Name:</label>
+              <p id="product-title">{{ c.category_name }}</p>
+              <label for="product-title">Product Name:</label>
+              <p id="product-title">{{ c.product_name }}</p>
+              <label for="price">Price:</label>
+              <p id="price">{{ c.price }} {{ c.product_price }}</p>
+              <label for="quantity">Quantity:</label>
+              <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                value="{{ c.quantity }}"
+              />
+            </div>
+            <i class="fas fa-3 fa-trash"> <button type="submit" (click)="deleteItem(c)" value="Remove from Cart"></button></i>
+        </div>
     </div>
   </div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </div>
   <h4 class="text-center">Total : {{ this.total }}</h4>
   <div class="text-center">
     <button class="btn btn-success" [routerLink]="['/booking']" >Checkout</button>
-</div>
+  </div>
 

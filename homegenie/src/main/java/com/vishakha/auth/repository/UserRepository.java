@@ -46,5 +46,4 @@ public class UserRepository {
         return jdbcTemplate.queryForList("EXEC sp_get_mails");
     }
 
-
 }

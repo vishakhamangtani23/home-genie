@@ -58,4 +58,8 @@ public class HomeResource {
         return homeService.fetchBookings(userId);
     }
 
+    @PostMapping("/insertbookings")
+    public ResponseEntity<Map<String, Object>> insertBookings(@RequestBody Map<String, Object> body) {
+        return homeService.insertBookings(body);
+    }
 }

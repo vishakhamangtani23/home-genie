@@ -2,6 +2,7 @@ package com.vishakha.auth.service;
 
 import com.vishakha.auth.repository.HomeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -71,5 +72,24 @@ public class HomeService {
     public List<Map<String,Object>> fetchBookings(Integer userId)
     {
         return homeRepository.fetchBookings(userId);
+    }
+
+    public ResponseEntity<Map<String,Object>> insertBookings( Map<String,Object> body)
+    {
+        int userId = (int)body.get("userId");
+        int productId = (int)body.get("productId");
+        String location = (String)body.get("location");
+        String address = (String) body.get("address");
+        String time_slot = (String) body.get("time_slot");
+        String date=(String) body.get("date");
+        int category_id=(int) body.get("category_id");
+
+        int noOfRows  = homeRepository.insertBookings(userId,productId,location,address,time_slot,date,category_id);
+        if(noOfRows >0)
+        {
+            return ResponseEntity.ok(Map.of("status","successful"));
+        }
+        return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(Map.of("status","Unsuccessful"));
+
     }
 }
