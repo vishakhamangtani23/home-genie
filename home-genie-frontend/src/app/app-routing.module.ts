@@ -35,10 +35,6 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'chat',
-    component: ChatHelpComponent,
-  },
-  {
     path: 'app-navbar',
     component: NavbarComponent,
   },
