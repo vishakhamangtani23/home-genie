@@ -18,15 +18,19 @@ export class BookingComponent {
   ) {}
   timeSlots: String[] = ['1:00pm', '2:00pm ', '3:00pm '];
   userId = this.cookieService.get('userId');
+  value : any;
+  email = this.cookieService.get('email');
   createForm(): void {
     this.appointmentForm = new FormGroup({
       location: new FormControl(),
       date: new FormControl(),
-      time: new FormControl(),
-      userId: new FormControl(),
+      time: new FormControl(this.value),      
+      address: new FormControl(),      
+      userId: new FormControl(this.userId),
     });
   }
   pd!: any;
+  username = this.cookieService.get("username")
   ngOnInit(): void {
     this.createForm();
     this.getPayment();
@@ -38,9 +42,6 @@ export class BookingComponent {
       // Handle payment
       if (this.pd) {
         window.location.href = this.pd;
-        if(true){
-          this.router.navigate(['/home']);
-        } // Redirect to payment link URL
       } else {
         console.error('Payment link not available');
       }
@@ -50,7 +51,7 @@ export class BookingComponent {
   }
 
   getPayment(): void {
-    this.homeService.getPayment().subscribe((res) => {
+    this.homeService.getPayment({'userId':this.userId ,'email':this.email, 'username': this.username, 'total':this.homeService.totalPrice}).subscribe((res) => {
       console.log(res);
       this.pd = res.paymentLinkUrl;
     });

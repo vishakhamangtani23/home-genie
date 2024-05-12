@@ -31,21 +31,23 @@ public class PaymentResource {
 
 
 
-    @GetMapping("/payments")
-    public Map<String,String> createPaymentLink() throws RazorpayException {
+    @PostMapping("/payments")
+    public Map<String,String> createPaymentLink(@RequestBody Map<String , Object> body ) throws RazorpayException {
 //        User user= (User) userService.findGroupById(groupId);
+        System.out.println(body);
         try{
             System.out.println("Successfull");
             RazorpayClient razorpay=new RazorpayClient(apiKey,apiSecret);
-
+            int amount = (int)body.get("total");
+            amount = amount*100;
             JSONObject paymentLinkRequest=new JSONObject();
-            paymentLinkRequest.put("amount",100000);
+            paymentLinkRequest.put("amount",amount);
             paymentLinkRequest.put("currency","INR");
             System.out.println(paymentLinkRequest);
 
             JSONObject customer=new JSONObject();
-            customer.put("name","Anjala Goreja");
-            customer.put("email","anjalagoreja@gmail.com");
+            customer.put("name",body.get("username"));
+            customer.put("email",body.get("email"));
             System.out.println(customer);
 
             JSONObject notify=new JSONObject();

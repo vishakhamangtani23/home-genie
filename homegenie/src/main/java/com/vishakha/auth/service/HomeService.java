@@ -76,15 +76,16 @@ public class HomeService {
 
     public ResponseEntity<Map<String,Object>> insertBookings( Map<String,Object> body)
     {
-        int userId = (int)body.get("userId");
-        int productId = (int)body.get("productId");
+        System.out.println(body);
+        int  userId = Integer.parseInt((String) body.get("userId"));
+//        int productId = Integer.parseInt((String)body.get("productId"));
         String location = (String)body.get("location");
         String address = (String) body.get("address");
         String time_slot = (String) body.get("time_slot");
         String date=(String) body.get("date");
-        int category_id=(int) body.get("category_id");
+//        int category_id=Integer.parseInt((String) body.get("category_id"));
 
-        int noOfRows  = homeRepository.insertBookings(userId,productId,location,address,time_slot,date,category_id);
+        int noOfRows  = homeRepository.insertBookings(userId,location,address,time_slot,date);
         if(noOfRows >0)
         {
             return ResponseEntity.ok(Map.of("status","successful"));

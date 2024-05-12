@@ -9,6 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class HomeService {
   serviceId:any;
+  totalPrice !: number;
   constructor(private http: HttpClient, private cookieService: CookieService) {}
   fetchAllServices(): Observable<any> {
     return this.http.get(APP_CONSTANTS.BACKEND_URL + 'services');
@@ -37,8 +38,9 @@ export class HomeService {
   deleteItem(cartId:any):Observable<any>{
     return this.http.get(APP_CONSTANTS.BACKEND_URL + 'delete/'+cartId);
   }
-  getPayment():Observable<any>{
-    return this.http.get(APP_CONSTANTS.BACKEND_URL+"payments")
+  getPayment(body:any ):Observable<any>{
+    console.log(body)
+    return this.http.post(APP_CONSTANTS.BACKEND_URL+"payments",body)
   }
   getBookings(userId:number):Observable<any>{
     return this.http.get(APP_CONSTANTS.BACKEND_URL+"bookings/"+userId)

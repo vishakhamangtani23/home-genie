@@ -42,6 +42,7 @@ export class LoginComponent {
       console.log(res);
       if (res.validYN === 1) {
         this.cookieService.set('username', res.username);
+        this.cookieService.set('email', res.email);
         this.cookieService.set('userId', res.userid);
         this.cookieService.set('token', res.token);
         this.cookieService.set('isLoggedIn', '1');

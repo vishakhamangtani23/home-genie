@@ -42,15 +42,14 @@ public class HomeRepository {
         return jdbcTemplate.queryForList("EXEC homeGenie.fetch_bookings ?", userId);
     }
 
-    public int insertBookings(int userId,int productId,String location, String address, String time_slot,String date, int category_id)
+    public int insertBookings(int userId,String location, String address, String time_slot,String date)
     {
-        return jdbcTemplate.update("EXEC insert_booking ?,?,?,?,?,?,?",userId ,
-                productId,
+        return jdbcTemplate.update("EXEC homeGenie.insert_booking ?,?,?,?,?",userId ,
+
                 location ,
                 address ,
                 time_slot,
-                date,
-                category_id
+                date
         );
     }
     public List<Map<String,Object>> fetchAllBookings()

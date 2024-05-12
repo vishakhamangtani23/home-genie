@@ -32,6 +32,7 @@ export class AddToCartComponent {
       }
     });
     console.log(this.total + 'Total');
+    this.homeService.totalPrice= this.total;
   }
 
   deleteItem(c:any){
