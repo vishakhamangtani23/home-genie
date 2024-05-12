@@ -16,6 +16,7 @@ import { BookingComponent } from './home/booking/booking.component';
 import { BookingsListComponent } from './home/bookings-list/bookings-list.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { GoogleMapDemoComponent } from './home/google-map-demo/google-map-demo.component';
+import { ProductsComponent } from './home/products/products.component';
 // import { FetchUserComponent } from './auth/fetch-user/fetch-user.component';
 
 const routes: Routes = [
@@ -83,6 +84,10 @@ const routes: Routes = [
   {
     path: 'booking-list',
     component: BookingsListComponent,
+  },
+  {
+path:"products",
+component : ProductsComponent
   },
   {
     path: 'payment ',

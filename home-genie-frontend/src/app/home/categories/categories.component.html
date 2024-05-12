@@ -1,4 +1,4 @@
-<h2 class="title" >Featured Products</h2>
+<h2 class="title" >Services that we provide </h2>
 <div class="row">
     <div class="col-4" *ngFor = "let category of categories">
         <a ><img class="h20" src="../../../assets/images/product-11.jpg"></a>
@@ -12,6 +12,6 @@
             <i class="fa fa-star-o" ></i>
         </div>
         <p>Rs. {{category.price}}</p> <p>
-            <button (click)="addToCart(category)"cls="btn btn-outline-success">Add to Cart</button>
+            <button (click)="addToCart(category)" class="btn btn-outline-success">Add to Cart</button>
           </p>
     </div>

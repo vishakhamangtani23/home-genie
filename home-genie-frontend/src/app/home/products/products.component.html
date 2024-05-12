@@ -1,7 +1,7 @@
 <h2 class="title" >Featured Products</h2>
 <div class="row">
     <div class="col-4" *ngFor = "let product of products">
-        <a ><img class="h20" src="../../../assets/images/product-11.jpg"></a>
+        <a ><img class="h20" src="../../../assets/images/product-3.jpg"></a>
         <a ><h4>{{product.product_name}}</h4></a>
         <div class="rating">
             <!--(before this added awesome4 cdn font link to the head)added a cdn link by searching font awesome4 icon and from the site  search the star entering the first option and getting a link of this fa-star*-->
@@ -12,7 +12,7 @@
             <i class="fa fa-star-o" ></i>
         </div>
         <p>Rs. {{product.product_price}}</p> <p>
-            <button (click)="addToCart(product)"cls="btn btn-outline-success">Add to Cart</button>
+            <button (click)="addToCart(product)" class="btn btn-outline-success">Add to Cart</button>
           </p>
     </div>
     <!-- <div class="col-4">

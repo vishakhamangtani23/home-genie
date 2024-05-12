@@ -9,37 +9,34 @@ import { AdminService } from '../admin.service';
 export class AdminDashboardComponent {
   options!:any;
   constructor(private adminService: AdminService) {
+
+  }
+  bookings!: any;
+  ngOnInit(): void {
+    console.log('AdminDashboardComponent');
+    
+  }
+  fetchAllBookings() {
+    this.adminService.fetchAllBookings().subscribe((res) => {
+      console.log(res);
+      this.bookings = res;
+      this.makeChart(this.bookings);
+    });
+  }
+  makeChart(data:any){
     this.options = {
-      // data:this.fetchAllBookings() ,
-      data:[
-        { asset: "Stocks", amount: 60000 },
-        { asset: "Bonds", amount: 40000 },
-        { asset: "Cash", amount: 7000 },
-        { asset: "Real Estate", amount: 5000 },
-        { asset: "Commodities", amount: 3000 },
-      ],
+      data:data ,
+      
       title: {
         text: 'Portfolio Composition',
       },
       series: [
         {
           type: 'pie',
-          angleKey: 'asset',
-          legendItemKey: 'amount',
+          angleKey: 'amount',
+          legendItemKey: 'location',
         },
       ],
     };
-  }
-  bookings!: any;
-  ngOnInit(): void {
-    console.log('AdminDashboardComponent');
-    this.fetchAllBookings();
-  }
-  fetchAllBookings() {
-    this.adminService.fetchAllBookings().subscribe((res) => {
-      console.log(res);
-      this.bookings = res;
-      return this.bookings;
-    });
   }
 }
