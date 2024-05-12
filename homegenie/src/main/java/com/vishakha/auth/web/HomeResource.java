@@ -62,4 +62,10 @@ public class HomeResource {
     public ResponseEntity<Map<String, Object>> insertBookings(@RequestBody Map<String, Object> body) {
         return homeService.insertBookings(body);
     }
+    @GetMapping("/bookings")
+    public List<Map<String,Object>> fetchAllBookings()
+    {
+        return homeService.fetchAllBookings();
+    }
+
 }

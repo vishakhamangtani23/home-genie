@@ -90,6 +90,9 @@ public class HomeService {
             return ResponseEntity.ok(Map.of("status","successful"));
         }
         return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(Map.of("status","Unsuccessful"));
-
+    }
+    public List<Map<String,Object>> fetchAllBookings()
+    {
+        return homeRepository.fetchAllBookings();
     }
 }

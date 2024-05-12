@@ -53,4 +53,9 @@ public class HomeRepository {
                 category_id
         );
     }
+    public List<Map<String,Object>> fetchAllBookings()
+    {
+        return jdbcTemplate.queryForList("EXEC homeGenie.fetch_all_bookings");
+    }
+
 }
