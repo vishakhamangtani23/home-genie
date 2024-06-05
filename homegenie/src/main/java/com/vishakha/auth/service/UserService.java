@@ -183,7 +183,8 @@ public class UserService {
 //        return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(Map.of("status","Unsuccessful"));
     }
 
-    @Scheduled(cron = "3 * * * * *") // Execute at 3:00 AM every Monday
+
+    @Scheduled(cron = "* * * * *")
     public void sendWelcomeEmails() {
         System.out.println("Current time is :: " + LocalDate.now());
         List<Map<String,Object>> emails = userRepository.getEmails();

@@ -22,6 +22,9 @@ dependencies {
 	runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation "com.razorpay:razorpay-java:1.4.3"
+	implementation 'com.twilio.sdk:twilio:10.1.5'
+	compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+	implementation 'org.json:json:20240303'
 }
 
 tasks.named('bootBuildImage') {

@@ -4,16 +4,23 @@ import com.vishakha.auth.repository.HomeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
 
+
+import java.util.Objects;
+
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
 @Service
 public class HomeService {
     @Autowired
     HomeRepository homeRepository;
-
+    public static final String ACCOUNT_SID = "ACc0bba02f3872ec9ba66fdc032a4e5d67";
+    public static final String AUTH_TOKEN = "96766e02cddad920aa0bfcb6200a850e";
     public List<Map<String, Object>> fetchAllServices(){
         return homeRepository.fetchAllServices();
     }
@@ -88,9 +95,24 @@ public class HomeService {
         int noOfRows  = homeRepository.insertBookings(userId,location,address,time_slot,date);
         if(noOfRows >0)
         {
+            sendWhatsappMessage();
             return ResponseEntity.ok(Map.of("status","successful"));
         }
         return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(Map.of("status","Unsuccessful"));
+    }
+
+    public void sendWhatsappMessage() {
+        System.out.println("sending whatsapp message");
+        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+        Message message = Message.creator(
+                        new com.twilio.type.PhoneNumber("whatsapp:+919359697403"),
+                        new com.twilio.type.PhoneNumber("whatsapp:+14155238886"),
+                        "Hey!  thankyou for shopping on homegenie"
+                )
+                .create();
+
+        System.out.println(message.getSid() + " " + message.getStatus());
+
     }
     public List<Map<String,Object>> fetchAllBookings()
     {
